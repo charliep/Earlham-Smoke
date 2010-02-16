@@ -1,8 +1,6 @@
 Note: Many more in-depth descriptions of Ogre subdirectories and contents can be found at http://www.ogre3d.org/wiki/index.php/Main_Page
 Note 2: Ogre subdirectories already include many things pertaining to Linux, OS X, and OpenGL, so transferring rendering may be easier than expected.
 
-/* 5770-6831 Remain */
-
 Smoke
 |-- bin - Contains Subdirectories which contain DLL files for both Release and Debug 
 |   |     Versions, Also contains various .cdf, .odf, .gdf, .sdf, and .odf file
