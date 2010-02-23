@@ -2,7 +2,9 @@ if [ $1 ] #Get the directory
 then
 DIRECTORY=$1
 else
-echo "USAGE: $0 <top directory>"
+echo "FixSlashes: Switch #include statement backslashes
+to forwardslashes in all .cpp and .h documents within a tree 
+USAGE: $0 <top directory>"
 exit
 fi
 
