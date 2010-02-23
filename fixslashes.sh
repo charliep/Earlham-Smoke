@@ -1,6 +1,9 @@
 if [ $1 ] #Get the directory
 then
-DIRECTORY=$1 
+DIRECTORY=$1
+else
+echo "USAGE: $0 <top directory>"
+exit
 fi
 
 script='if ($_ =~ m/^#include/)
