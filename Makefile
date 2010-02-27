@@ -1,9 +1,9 @@
 GPPFLAGS=-ggdb -Wall -pedantic
 
-all: smoke
+all: Smoke
 
-smoke: code/Smoke.cpp
+Smoke: code/Smoke.cpp
 	g++ ${GPPFLAGS} code/Smoke.cpp -o Smoke
 
 clean:
-	rm -rf *o hello
+	rm -rf Smoke 
