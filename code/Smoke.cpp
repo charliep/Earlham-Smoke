@@ -1,4 +1,3 @@
-<<<<<<< HEAD:code/Smoke.cpp
 // Copyright © 2008-2009 Intel Corporation
 // All Rights Reserved
 //
@@ -20,12 +19,18 @@
 #include <string>
 #include <cstdio>
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 
 //extern "C" int APIENTRY
-int main(int argc, const char** argv)
+int main(int argc, char **argv)
 {
+
+	char c;
+	char *logfile = (char*)"logdefault.txt";
+	bool bLogging;
+	std::string sGdfPath = "Smoke.gdf";
 //	USES_CONVERSION;
 	
 	//int					argc, iArg;
@@ -35,7 +40,7 @@ int main(int argc, const char** argv)
 		switch(c)
 		{
 			case 'l':
-				bLogging = TRUE;
+				bLogging = true;
 				if( optarg != NULL )
 					logfile = optarg;
 				break;
@@ -51,7 +56,6 @@ int main(int argc, const char** argv)
 				sGdfPath = argv[optind];
 		}
 	}	
-	string	sGdfPath = "Smoke.gdf";
 	//bool				bLogging;
 	//
     // Start up debug functionality.
