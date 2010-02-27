@@ -1,3 +1,4 @@
+<<<<<<< HEAD:code/Smoke.cpp
 // Copyright © 2008-2009 Intel Corporation
 // All Rights Reserved
 //
@@ -28,6 +29,28 @@ int main(int argc, const char** argv)
 //	USES_CONVERSION;
 	
 	//int					argc, iArg;
+
+	while ( ( c = getopt( argc, argv, "l::" ) ) != -1 )
+	{
+		switch(c)
+		{
+			case 'l':
+				bLogging = TRUE;
+				if( optarg != NULL )
+					logfile = optarg;
+				break;
+			case '?':
+				if( isprint( optopt ) )
+					fprintf( stderr, "unknown option '-%c'. \n", optopt );
+				else
+					fprintf (stderr,
+							 "Unknown option character `\\x%x'.\n",
+							 optopt);
+				return 1;
+			default:
+				sGdfPath = argv[optind];
+		}
+	}	
 	string	sGdfPath = "Smoke.gdf";
 	//bool				bLogging;
 	//
