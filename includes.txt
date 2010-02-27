@@ -1,0 +1,51 @@
+-- Tbb is an intel threading library --
+BaseTypes/TbbSpinMutex.h	        #include <tbb/spin_mutex.h> - 
+Framework/TaskManagerTBB.cpp	    	#include <tbb/parallel_for.h>
+Framework/TaskManagerTBB.cpp	    	#include <tbb/blocked_range.h>
+Framework/TaskManagerTBB.cpp	    	#include <tbb/partitioner.h>
+Framework/TaskManagerTBB.h		#include <tbb/task.h>
+Framework/TaskManagerTBB.h		#include <tbb/task_scheduler_init.h>
+Framework/TaskManagerTBB.h		#include <tbb/tbb_thread.h>
+SystemProceduralFire/FireObject.cpp	#include <tbb/scalable_allocator.h>
+Framework/IttNotify.h	    		#include <libittnotify.h>
+
+--This is just a collection of windows-specific functions--
+-- it contains stdarg, ctype and string standard header functions --
+BaseTypes/Synchronization.cpp		#include <windows.h>
+Framework/ThreadPool.cpp		#include <Windows.h>
+
+--Standard Headers-- All of these should work fine sans modification
+BaseTypes/Math.cpp			#include <math.h>
+BaseTypes/Debug.h			#include <stdarg.h>
+Interfaces/Property.cpp			#include <StdArg.h>
+BaseTypes/BaseTypes.h			#include <queue>
+BaseTypes/BaseTypes.h			#include <list>
+BaseTypes/BaseTypes.h			#include <map>
+BaseTypes/BaseTypes.h			#include <string>
+BaseTypes/dbnew.cpp			#include <new>
+Framework/ChangeControlManager.h	#include <set>
+BaseTypes/Debug.cpp			#include <stdio.h>
+BaseTypes/Debug.cpp			#include <time.h>
+Framework/Instrumentation.cpp		#include <sstream>
+SystemAudioFMOD/Object.h		#include <ctime>
+SystemAudioFMOD/System.cpp		#include <vector>
+SystemAudioFMOD/ObjectAI.cpp		#include <cstring>
+BaseTypes/Debug.cpp			#include <direct.h> 
+Framework/TaskManagerTBB.cpp		#include <process.h> 
+
+--OgreGraphics-- This hopefully is easily reengineerable
+SystemGraphicsOgre/ObjectWindow.cpp	#include <OgreBorderPanelOverlayElement.h>
+SystemGraphicsOgre/ObjectWindow.cpp	#include <OgreHardwarePixelBuffer.h>
+SystemGraphicsOgre/Scene.cpp		#include <OgreFontManager.h> 
+SystemGraphicsOgre/ObjectWindow.h	#include <OgrePanelOverlayElement.h>
+SystemGraphicsOgre/ObjectWindow.h	#include <OgreTextAreaOverlayElement.h>
+SystemGraphicsOgre/DynamicBuffer.h	#include <OgreSimpleRenderable.h>
+SystemGraphicsOgre/DynamicBuffer.cpp	#include <Ogre.h>
+SystemPhysicsCollisionHavok/Scene.cpp	#include <Common/Visualize/hkVisualDebugger.h>
+SystemPhysicsCollisionHavok/Scene.cpp	#include <Physics/Utilities/VisualDebugger/hkpPhysicsContext.h>
+
+--Other--
+BaseTypes/MathX.h			#include <intrin.h> - Not sure what this all means  http://parasol.tamu.edu/~yuriys/polaris/intrin_8h-source.html
+Framework/DebugWindow.cpp		#include <commctrl.h> - Looks like a Windows-specific directory
+Smoke/Smoke.cpp				#include <tchar.h> - Microsoft specific library for character mapping (lets you easily switch between Ascii, Unicode etc.)
+Smoke/Smoke.cpp				#include <atlbase.h> - Looks Microsoft specific
