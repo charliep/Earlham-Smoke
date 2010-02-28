@@ -1,4 +1,4 @@
-GPPFLAGS=-ggdb -Wall -pedantic
+GPPFLAGS=-ggdb -Wall -pedantic -msse2
 
 all: Smoke
 
