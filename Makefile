@@ -7,3 +7,4 @@ Smoke: code/Smoke.cpp
 
 clean:
 	rm -rf Smoke 
+	find . -name *.o -delete 
