@@ -1,4 +1,4 @@
-// Copyright © 2008-2009 Intel Corporation
+// Copyright ï¿½ 2008-2009 Intel Corporation
 // All Rights Reserved
 //
 // Permission is granted to use, copy, distribute and prepare derivative works of this
@@ -43,14 +43,13 @@ int main(int argc, char **argv)
 				bLogging = true;
 				if( optarg != NULL )
 					logfile = optarg;
+				cout << "logging is set, logfile: " << logfile << endl;
 				break;
 			case '?':
 				if( isprint( optopt ) )
-					fprintf( stderr, "unknown option '-%c'. \n", optopt );
+					cerr << "unknown option " << optopt << endl;
 				else
-					fprintf (stderr,
-							 "Unknown option character `\\x%x'.\n",
-							 optopt);
+					cerr << "Unknown option character " << optopt << endl;
 				return 1;
 			default:
 				sGdfPath = argv[optind];
