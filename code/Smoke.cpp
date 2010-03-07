@@ -1,4 +1,4 @@
-// Copyright © 2008-2009 Intel Corporation
+// Copyright ï¿½ 2008-2009 Intel Corporation
 // All Rights Reserved
 //
 // Permission is granted to use, copy, distribute and prepare derivative works of this
@@ -19,16 +19,42 @@
 #include <string>
 #include <cstdio>
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 
 //extern "C" int APIENTRY
-int main(int argc, const char** argv)
+int main(int argc, char **argv)
 {
+
+	char c;
+	char *logfile = (char*)"logdefault.txt";
+	bool bLogging;
+	std::string sGdfPath = "Smoke.gdf";
 //	USES_CONVERSION;
 	
 	//int					argc, iArg;
-	string	sGdfPath = "Smoke.gdf";
+
+	while ( ( c = getopt( argc, argv, "l::" ) ) != -1 )
+	{
+		switch(c)
+		{
+			case 'l':
+				bLogging = true;
+				if( optarg != NULL )
+					logfile = optarg;
+				cout << "logging is set, logfile: " << logfile << endl;
+				break;
+			case '?':
+				if( isprint( optopt ) )
+					cerr << "unknown option " << optopt << endl;
+				else
+					cerr << "Unknown option character " << optopt << endl;
+				return 1;
+			default:
+				sGdfPath = argv[optind];
+		}
+	}	
 	//bool				bLogging;
 	//
     // Start up debug functionality.
