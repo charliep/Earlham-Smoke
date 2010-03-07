@@ -3,3 +3,4 @@ project.
 
 Updates:
 2/16/10 -- gil adds first Smoke.cpp
+3/7/10 -- Sam solves compiling errors in BaseTypes.h and its includes

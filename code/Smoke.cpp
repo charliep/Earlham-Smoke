@@ -12,50 +12,23 @@
 // assume any responsibility for any errors which may appear in this software nor any
 // responsibility to update it.
 
-//#include "../BaseTypes/BaseTypes.h"
+#include "BaseTypes/BaseTypes.h"
 //#include "../Interfaces/Interface.h"
 //#include "../Framework/FrameworkAPI.h"
 //#include "../Framework/EnvironmentManager.cpp"
 #include <string>
 #include <cstdio>
 #include <iostream>
-#include <cstdlib>
 using namespace std;
 
 
 //extern "C" int APIENTRY
-int main(int argc, char **argv)
+int main(int argc, const char** argv)
 {
-
-	char c;
-	char *logfile = (char*)"logdefault.txt";
-	bool bLogging;
-	std::string sGdfPath = "Smoke.gdf";
 //	USES_CONVERSION;
 	
 	//int					argc, iArg;
-
-	while ( ( c = getopt( argc, argv, "l::" ) ) != -1 )
-	{
-		switch(c)
-		{
-			case 'l':
-				bLogging = true;
-				if( optarg != NULL )
-					logfile = optarg;
-				break;
-			case '?':
-				if( isprint( optopt ) )
-					fprintf( stderr, "unknown option '-%c'. \n", optopt );
-				else
-					fprintf (stderr,
-							 "Unknown option character `\\x%x'.\n",
-							 optopt);
-				return 1;
-			default:
-				sGdfPath = argv[optind];
-		}
-	}	
+	string	sGdfPath = "Smoke.gdf";
 	//bool				bLogging;
 	//
     // Start up debug functionality.
