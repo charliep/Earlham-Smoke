@@ -13,7 +13,7 @@
 // responsibility to update it.
 
 #include "BaseTypes/BaseTypes.h"
-//#include "../Interfaces/Interface.h"
+#include "Interfaces/Interface.h"
 //#include "../Framework/FrameworkAPI.h"
 //#include "../Framework/EnvironmentManager.cpp"
 #include <string>

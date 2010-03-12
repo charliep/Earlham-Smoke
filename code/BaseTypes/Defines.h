@@ -17,10 +17,6 @@
 #define True						        1
 #define False						        0
 
-
-#define NULL						        0
-
-
 #if defined( _MSC_VER )
 #if defined( _WIN64 )
 #define W64SAFE

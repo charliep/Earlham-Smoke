@@ -14,67 +14,42 @@
 
 #pragma once
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /// <summary>
-///   A spin wait object class similar to a critcal section.
+///   An interface for accessing platform specific functionality for things like the OS and
+///    processor.
 /// </summary>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class SpinWait
+class IPlatform
 {
-    friend class Lock;
-
 public:
 
-    /// <summary>
-    ///   Constructor.
-    /// </summary>
-    SpinWait( void );
-
-    /// <summary>
-    ///   Destructor.
-    /// </summary>
-    ~SpinWait( void );
-
-
     ////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///   A class for locking a spin wait object.
+    ///   An interface for accessing processor information.
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    class Lock
+    class IProcessor
     {
     public:
+        /// <summary>
+        ///   Returns the number of processors available for this process.
+        /// </summary>
+        /// <returns>The processor count.</returns>
+        virtual u32 GetNumProcessors( void ) = 0;
 
         /// <summary>
-        ///   Constructor.
+        ///   Sets the calling threads affinity to the specified processor.
         /// </summary>
-        /// <remarks>
-        ///   Locks the spin wait object.
-        /// </remarks>
-        /// <param name="sw">The spin wait object to lock.</param>
-        /// <param name="bReadOnly">Signifies if the lock is for reading,
-        ///                         or for reading and writing.</param>
-        Lock( SpinWait& sw, Bool bReadOnly=False );
-
-        /// <summary>
-        ///   Constructor.
-        /// </summary>
-        /// <remarks>
-        ///   Unlocks the spin wait object.  So when the class goes out of scope the spin wait is
-        //     released.
-        /// </remarks>
-        ~Lock( void );
-
-    protected:
-
-        SpinWait&       m_SpinWait;
+        /// <param name="ProcessorNumber">The processor number to set the affinity to.</param>
+        virtual void AffinitizeThreadToProcessor( u32 ProcessorNumber ) = 0;
     };
 
-
-protected:
-
-    u32  m_Lock[ 8 ];
+    /// <summary>
+    ///   Gets a reference to the IProcessor class.
+    /// </summary>
+    /// <returns>A reference to the IProcessor class.</returns>
+    virtual IProcessor& Processor( void ) = 0;
 };
