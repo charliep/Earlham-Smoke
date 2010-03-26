@@ -12,8 +12,8 @@
 // assume any responsibility for any errors which may appear in this software nor any
 // responsibility to update it.
 
-//#include "../BaseTypes/BaseTypes.h"
-//#include "../Interfaces/Interface.h"
+#include "BaseTypes/BaseTypes.h"
+#include "Interfaces/Interface.h"
 //#include "../Framework/FrameworkAPI.h"
 //#include "../Framework/EnvironmentManager.cpp"
 #include <string>

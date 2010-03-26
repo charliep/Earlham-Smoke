@@ -1,4 +1,4 @@
-GPPFLAGS=-ggdb -Wall -pedantic -msse2
+GPPFLAGS=-ggdb -Wall -pedantic -msse2 -Wno-long-long
 
 all: Smoke
 
