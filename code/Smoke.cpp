@@ -43,7 +43,9 @@ int main(int argc, char **argv)
 				bLogging = true;
 				if( optarg != NULL )
 					logfile = optarg;
-				cout << "logging is set, logfile: " << logfile << endl;
+				#ifdef DEBUG
+					cout << "logging is set, logfile: " << logfile << endl;
+				#endif
 				break;
 			case '?':
 				if( isprint( optopt ) )
@@ -52,9 +54,15 @@ int main(int argc, char **argv)
 					cerr << "Unknown option character " << optopt << endl;
 				return 1;
 			default:
-				sGdfPath = argv[optind];
-		}
-	}	
+				break;
+		}	
+		
+	}
+	if( argv[optind] != NULL)
+		sGdfPath = argv[optind];
+	#ifdef DEBUG
+		cout << sGdfPath << endl;
+	#endif
 	//bool				bLogging;
 	//
     // Start up debug functionality.
